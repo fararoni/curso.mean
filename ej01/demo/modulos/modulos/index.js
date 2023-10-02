@@ -1,0 +1,1 @@
+exports.categoria =['A','B','C']
