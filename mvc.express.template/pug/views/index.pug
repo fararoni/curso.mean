@@ -1,0 +1,9 @@
+html
+  head
+    title= titulo
+  body
+    h1 Proyecto, #{ proyecto }.
+    h2 Participantes
+    ul 
+        each nombre in nombres ? nombres : ['No se recibió la lista de participantes']
+            li= nombre
