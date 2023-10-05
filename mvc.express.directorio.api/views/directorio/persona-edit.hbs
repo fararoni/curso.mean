@@ -1,0 +1,78 @@
+<div class="card card-primary card-outline">
+    <form action="/directorio/save/{{ id}}" method="post">
+    <input type="hidden" name="id" value="id" />
+    <div class="card-body box-profile">
+        <div class="text-center">
+            <img class="profile-user-img img-fluid img-circle" src="/images/default-150x150.png"
+                alt="{{persona.NombreCompleto}}">
+                
+        </div>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Título:</label>
+                        <input type="text" class="form-control" id="Titulo" 
+                        name="titulo"  value="{{persona.Titulo }}" placeholder="{{persona.Titulo }}">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre completo:</label>
+                        <input type="text" class="form-control" id="NombreCompleto" 
+                        name="nombrecompleto" value="{{persona.NombreCompleto}}" placeholder="{{persona.NombreCompleto}}">
+                    </div>
+                </div>
+            </div>
+
+        <p class="text-muted text-center">
+                <div class="form-group">
+                        <label for="exampleInputEmail1">Cargo:</label>
+                        <input type="text" class="form-control" id="Cargo" 
+                        name="cargo" value="{{persona.Cargo}}" placeholder="{{persona.Cargo}}">
+                </div>
+
+        </p>
+
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="Correo" 
+                name="correo" value="{{persona.Correo}}" placeholder="{{persona.Correo}}">
+            </div>
+        </div>
+        
+        <ul class="list-group list-group-unbordered mb-3">
+            <li class="list-group-item">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Area</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Area"
+                        name="area" value="{{ persona.Area}}" placeholder="{{ persona.Area}}">
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Edificio</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Edificio"
+                        name="edificio" value="{{ persona.Edificio}}" placeholder="{{ persona.Edificio}}">
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                 <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Extension</label>
+                    <div class="col-sm-10">
+                        <input type="numeric" class="form-control" id="Extension"
+                        name="extension" value="{{ persona.Extension}}" placeholder="{{ persona.Extension}}">
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <button type="cancel" class="btn btn-secondary">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+    </form>
+</div>
