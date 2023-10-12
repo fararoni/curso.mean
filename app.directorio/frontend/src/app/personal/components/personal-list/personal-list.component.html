@@ -1,0 +1,33 @@
+<h2 class="text-center m-5">Directorio.</h2>
+<table class="table table-striped table-bordered">
+   <thead>
+       <tr>
+           <th>Titulo</th>
+           <th>Nombre completo</th>
+           <th>Cargo</th>
+           <th>Correo</th>
+           <th>Extensión</th>
+           <th>Acción</th>
+       </tr>
+   </thead>
+
+   <tbody>
+    
+       <tr *ngFor="let persona of personas$ | async">
+           <td>{{persona.titulo}}</td>
+           <td>{{persona.nombrecompleto}}</td>
+           <td>{{persona.cargo}}</td>
+           <td>{{persona.correo}}</td>
+           <td>{{persona.extension}}</td>
+           <td>
+            <button class="btn btn-primary me-1"
+            [routerLink]="['editar/', persona._id]">Editar</button>
+            
+            <button class="btn btn-danger"
+            (click)="deletePersona(persona._id || '')">Borrar</button>
+           </td>
+       </tr>
+   </tbody>
+</table>
+
+<button class="btn btn-primary mt-3" [routerLink]="['nuevo']">Agregar a una Persona</button>

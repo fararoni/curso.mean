@@ -1,0 +1,54 @@
+<form class="persona-form" autocomplete="off" [formGroup]="personaForm" (ngSubmit)="submitForm()">
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" id="nombrecompleto"
+     formControlName="nombrecompleto" placeholder="Nombre completo" required>
+    <label for="name">Nombre completo:</label>
+  </div>
+
+  <div *ngIf="nombrecompleto.invalid && (nombrecompleto.dirty || nombrecompleto.touched)" class="alert alert-danger">
+    <div *ngIf="nombrecompleto.errors?.['required']">
+      El nombre es obligatorio.
+    </div>
+    <div *ngIf="nombrecompleto.errors?.['minlength']">
+      El nombre debe tener por los menos 3 caracteres.
+    </div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" formControlName="cargo" placeholder="cargo" required>
+    <label for="cargo">cargo</label>
+  </div>
+
+  <div *ngIf="cargo.invalid && (cargo.dirty || cargo.touched)" class="alert alert-danger">
+
+    <div *ngIf="cargo.errors?.['required']">
+    cargo is required.
+    </div>
+    <div *ngIf="cargo.errors?.['minlength']">
+    cargo must be at least 5 characters long.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" 
+             formControlName="puesto" name="puesto"
+             id="dir-general" value="Director General" required>
+      <label class="form-check-label" for="dir-general">Director General</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio"
+             formControlName="puesto" name="puesto"
+             id="dir-adjunto" value="Director Adjunto">
+      <label class="form-check-label" for="dir-adjunto">Director Adjunto</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio"
+             formControlName="puesto" name="puesto"
+             id="asesor"  value="Asesor">
+      <label class="form-check-label" for="asesor">Asesor</label>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="personaForm.invalid">Agregar</button>
+</form>
